@@ -1,8 +1,8 @@
-from src.ReadCSVFile import *
+from src.ReadCSVFile import ReadCSVFile
 
 
 def test_getFileData():
-    if "emailAddress" == getFileData("customer.csv")[0][0]:
+    if "emailAddress" == ReadCSVFile.getFileData("customer.csv")[0][0]:
         print("Pass","test_getFileData")
     else:
         print("fail", "test_getFileData")

@@ -1,7 +1,9 @@
-from src.ReadCSVFile import *
+from src.ReadCSVFile import ReadCSVFile
+
+readCSVFile = ReadCSVFile()
 
 def loadCustomers():
-    customerData = getFileData("customer.csv")
+    customerData = readCSVFile.getFileData("customer.csv")
     return customerData
 
 def formatCustomers():

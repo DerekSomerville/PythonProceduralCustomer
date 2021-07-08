@@ -1,8 +1,15 @@
-import csv
+import csv, os
 
 class ReadCSVFile:
 
-    def getFileData(self,fileName):
+    def fixWorkingDirectory():
+        currentWorkingDirectory = os.getcwd()
+        while "test" in currentWorkingDirectory or "src" in currentWorkingDirectory:
+            os.chdir("../")
+            currentWorkingDirectory = os.getcwd()
+
+    def getFileData(fileName):
+        ReadCSVFile.fixWorkingDirectory()
         fileData = []
         with open("resource/" + fileName, 'rt')as dataFile:
             fileReader = csv.reader(dataFile)
